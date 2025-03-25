@@ -7,17 +7,21 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to update all translatable elements
   function updateLanguage(lang) {
     // Update elements with data-en/data-sw attributes
-    document.querySelectorAll("[data-en], [data-sw]").forEach(el => {
+    document.querySelectorAll("[data-en], [data-sw]").forEach((el) => {
       if (el.hasAttribute(`data-${lang}`)) {
-        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-          const placeholder = el.getAttribute(`data-${lang}-placeholder`) || el.getAttribute(`data-${lang}`);
+        if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+          const placeholder =
+            el.getAttribute(`data-${lang}-placeholder`) ||
+            el.getAttribute(`data-${lang}`);
           if (placeholder) el.placeholder = placeholder;
-        } else if (el.tagName === 'OPTION' && el.selected) {
+        } else if (el.tagName === "OPTION" && el.selected) {
           // Handle select options
-          const select = el.closest('select');
+          const select = el.closest("select");
           if (select) {
-            select.querySelector('option[selected]')?.removeAttribute('selected');
-            el.setAttribute('selected', 'selected');
+            select
+              .querySelector("option[selected]")
+              ?.removeAttribute("selected");
+            el.setAttribute("selected", "selected");
           }
         } else {
           el.textContent = el.getAttribute(`data-${lang}`);
@@ -27,10 +31,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Update dropdown display
     currentLangDisplay.textContent = lang === "en" ? "English" : "Swahili";
-    
+
     // Update page title
-    document.title = document.querySelector("title").getAttribute(`data-${lang}`) || document.title;
-    
+    document.title =
+      document.querySelector("title").getAttribute(`data-${lang}`) ||
+      document.title;
+
     // Store language preference
     localStorage.setItem("mifugopay_lang", lang);
     currentLang = lang;
@@ -40,8 +46,8 @@ document.addEventListener("DOMContentLoaded", function () {
   updateLanguage(currentLang);
 
   // Language toggle event listeners
-  languageToggleLinks.forEach(link => {
-    link.addEventListener("click", function(e) {
+  languageToggleLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
       e.preventDefault();
       const lang = this.getAttribute("data-lang-toggle");
       if (lang !== currentLang) {
@@ -53,19 +59,20 @@ document.addEventListener("DOMContentLoaded", function () {
   // Form submission handling
   const subsidyForm = document.getElementById("subsidyForm");
   if (subsidyForm) {
-    subsidyForm.addEventListener("submit", function(e) {
+    subsidyForm.addEventListener("submit", function (e) {
       e.preventDefault();
-      const message = currentLang === "en" 
-        ? "Your subsidy application has been submitted successfully! We will contact you soon."
-        : "Ombi lako la ruzuku limewasilishwa kikamilifu! Tutawasiliana nawe hivi karibuni.";
+      const message =
+        currentLang === "en"
+          ? "Your subsidy application has been submitted successfully! We will contact you soon."
+          : "Ombi lako la ruzuku limewasilishwa kikamilifu! Tutawasiliana nawe hivi karibuni.";
       alert(message);
       this.reset();
     });
   }
 
   // Smooth scrolling for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function(e) {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
       e.preventDefault();
       const targetId = this.getAttribute("href");
       const targetElement = document.querySelector(targetId);
@@ -79,9 +86,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Add animation class when elements come into view
-  const animateOnScroll = function() {
+  const animateOnScroll = function () {
     const elements = document.querySelectorAll(".card, .section-title, .table");
-    elements.forEach(element => {
+    elements.forEach((element) => {
       const elementPosition = element.getBoundingClientRect().top;
       const windowHeight = window.innerHeight;
       if (elementPosition < windowHeight - 100) {
