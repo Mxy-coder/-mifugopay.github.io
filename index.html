@@ -1,25 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>mifugo pay</title>
-  <link rel="stylesheet" href="./style.css">
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-en="MifugoPay - Empowering Farmers, Transforming Agriculture" 
-        data-sw="MifugoPay - Kuwawezesha Wakulima, Kubadilisha Kilimo">MifugoPay - Empowering Farmers, Transforming Agriculture</title>
+  <title data-en="MifugoPay - Empowering Farmers, Transforming Agriculture" data-sw="MifugoPay - Kuwawezesha Wakulima, Kubadilisha Kilimo">MifugoPay - Empowering Farmers, Transforming Agriculture</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link href="styles.css" rel="stylesheet">
 </head>
+
 <body>
   <!-- Navigation Bar with Language Toggle -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-success">
@@ -415,8 +406,7 @@
       <div class="row">
         <div class="col-md-4 mb-4 mb-md-0">
           <h5 data-en="MifugoPay" data-sw="MifugoPay">MifugoPay</h5>
-          <p data-en="Empowering Farmers, Transforming Agriculture through technology and financial inclusion." 
-             data-sw="Kuwawezesha Wakulima, Kubadilisha Kilimo kupitia teknolojia na ujumuishaji wa kifedha.">
+          <p data-en="Empowering Farmers, Transforming Agriculture through technology and financial inclusion." data-sw="Kuwawezesha Wakulima, Kubadilisha Kilimo kupitia teknolojia na ujumuishaji wa kifedha.">
             Empowering Farmers, Transforming Agriculture through technology and financial inclusion.
           </p>
         </div>
@@ -440,8 +430,7 @@
         </div>
         <div class="col-md-4">
           <h5 data-en="Newsletter" data-sw="Barua pepe ya Habari">Newsletter</h5>
-          <p data-en="Subscribe to get farming tips and updates." 
-             data-sw="Jiandikishe kupata vidokezo vya kilimo na sasisho.">
+          <p data-en="Subscribe to get farming tips and updates." data-sw="Jiandikishe kupata vidokezo vya kilimo na sasisho.">
             Subscribe to get farming tips and updates.
           </p>
           <form class="mb-3">
@@ -474,12 +463,11 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
       // Language switching functionality
       const languageToggleLinks = document.querySelectorAll("[data-lang-toggle]");
       const currentLangDisplay = document.querySelector("#currentLang");
       let currentLang = localStorage.getItem("mifugopay_lang") || "en";
-
       // Function to update all translatable elements
       function updateLanguage(lang) {
         // Update elements with data-en/data-sw attributes
@@ -500,21 +488,16 @@
             }
           }
         });
-
         // Update dropdown display
         currentLangDisplay.textContent = lang === "en" ? "English" : "Swahili";
-        
         // Update page title
         document.title = document.querySelector("title").getAttribute(`data-${lang}`) || document.title;
-        
         // Store language preference
         localStorage.setItem("mifugopay_lang", lang);
         currentLang = lang;
       }
-
       // Initialize language
       updateLanguage(currentLang);
-
       // Language toggle event listeners
       languageToggleLinks.forEach(link => {
         link.addEventListener("click", function(e) {
@@ -525,20 +508,18 @@
           }
         });
       });
-
       // Form submission handling
       const subsidyForm = document.getElementById("subsidyForm");
       if (subsidyForm) {
         subsidyForm.addEventListener("submit", function(e) {
           e.preventDefault();
-          const message = currentLang === "en" 
-            ? "Your subsidy application has been submitted successfully! We will contact you soon."
-            : "Ombi lako la ruzuku limewasilishwa kikamilifu! Tutawasiliana nawe hivi karibuni.";
+          const message = currentLang === "en" ?
+            "Your subsidy application has been submitted successfully! We will contact you soon." :
+            "Ombi lako la ruzuku limewasilishwa kikamilifu! Tutawasiliana nawe hivi karibuni.";
           alert(message);
           this.reset();
         });
       }
-
       // Smooth scrolling for anchor links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function(e) {
@@ -553,7 +534,6 @@
           }
         });
       });
-
       // Add animation class when elements come into view
       const animateOnScroll = function() {
         const elements = document.querySelectorAll(".card, .section-title, .table");
@@ -570,9 +550,5 @@
     });
   </script>
 </body>
-</html>
-<!-- partial -->
-  <script  src="./script.js"></script>
 
-</body>
 </html>
