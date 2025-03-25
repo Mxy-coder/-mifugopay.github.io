@@ -106,7 +106,9 @@ body {
 }
 
 /* Add smooth transitions for language changes */
-[data-en], [data-sw], #currentLang {
+[data-en],
+[data-sw],
+#currentLang {
   transition: all 0.3s ease;
 }
 
