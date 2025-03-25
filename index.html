@@ -42,6 +42,9 @@
           <li class="nav-item">
             <a class="nav-link" href="#financial" data-en="Financial Services" data-sw="Huduma za Kifedha">Financial Services</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#training" data-en="Training" data-sw="Mafunzo">Training</a>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown">
               <i class="fas fa-language"></i> <span id="currentLang">English</span>
@@ -137,6 +140,18 @@
               <span data-en="Equipment Loan" data-sw="Mkopo wa Vifaa">Equipment Loan</span>
               <span class="badge bg-warning rounded-pill" data-en="Limited" data-sw="Mdogo">Limited</span>
             </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <span data-en="Vaccination Support" data-sw="Msaada wa Chanjo">Vaccination Support</span>
+              <span class="badge bg-success rounded-pill" data-en="Available" data-sw="Inapatikana">Available</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <span data-en="AI Breeding Support" data-sw="Msaada wa Ufugaji Bandia">AI Breeding Support</span>
+              <span class="badge bg-success rounded-pill" data-en="Available" data-sw="Inapatikana">Available</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <span data-en="Animal Feed Subsidy" data-sw="Ruzuku ya Malisho ya Wanyama">Animal Feed Subsidy</span>
+              <span class="badge bg-success rounded-pill" data-en="Available" data-sw="Inapatikana">Available</span>
+            </li>
           </ul>
           <div class="card mb-4">
             <div class="card-body">
@@ -163,6 +178,9 @@
                     <option value="fertilizer" data-en="Fertilizer Subsidy" data-sw="Ruzuku ya Mboji">Fertilizer Subsidy</option>
                     <option value="seed" data-en="Seed Subsidy" data-sw="Ruzuku ya Mbegu">Seed Subsidy</option>
                     <option value="equipment" data-en="Equipment Loan" data-sw="Mkopo wa Vifaa">Equipment Loan</option>
+                    <option value="vaccination" data-en="Vaccination Support" data-sw="Msaada wa Chanjo">Vaccination Support</option>
+                    <option value="breeding" data-en="AI Breeding Support" data-sw="Msaada wa Ufugaji Bandia">AI Breeding Support</option>
+                    <option value="feed" data-en="Animal Feed Subsidy" data-sw="Ruzuku ya Malisho ya Wanyama">Animal Feed Subsidy</option>
                   </select>
                 </div>
                 <div class="mb-3">
@@ -170,8 +188,11 @@
                   <input type="number" class="form-control" id="farmSize" required>
                 </div>
                 <div class="mb-3">
-                  <label for="cropType" class="form-label" data-en="Crop Type" data-sw="Aina ya Mmea">Crop Type</label>
-                  <input type="text" class="form-control" id="cropType" required>
+                  <label for="mpesaNumber" class="form-label" data-en="M-Pesa Number" data-sw="Nambari ya M-Pesa">M-Pesa Number</label>
+                  <div class="input-group">
+                    <span class="input-group-text">+254</span>
+                    <input type="tel" class="form-control" id="mpesaNumber" pattern="[0-9]{9}" required>
+                  </div>
                 </div>
                 <div class="mb-3">
                   <label for="location" class="form-label" data-en="Location" data-sw="Mahali">Location</label>
@@ -348,6 +369,143 @@
     </div>
   </section>
 
+  <!-- M-Pesa Integration Section -->
+  <section id="mpesa-integration" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4" data-en="Safaricom M-Pesa Integration" data-sw="Ujumuishaji wa Safaricom M-Pesa">Safaricom M-Pesa Integration</h2>
+      
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card mb-4">
+            <div class="card-body">
+              <h4 data-en="Farmer Verification" data-sw="Uthibitishaji wa Mkulima">Farmer Verification</h4>
+              <form id="verificationForm">
+                <div class="mb-3">
+                  <label class="form-label" data-en="National ID" data-sw="Kitambulisho cha Taifa">National ID</label>
+                  <input type="text" class="form-control" id="nationalId" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" data-en="M-Pesa Number" data-sw="Nambari ya M-Pesa">M-Pesa Number</label>
+                  <div class="input-group">
+                    <span class="input-group-text">+254</span>
+                    <input type="tel" class="form-control" id="mpesaNumber" pattern="[0-9]{9}" required>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-success" data-en="Verify Account" data-sw="Thibitisha Akaunti">Verify Account</button>
+              </form>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-body">
+              <h4 data-en="USSD Shortcode" data-sw="Nambari Fupi ya USSD">USSD Shortcode</h4>
+              <div class="text-center my-4">
+                <div class="border border-success rounded p-3 d-inline-block">
+                  <h3>*234*123#</h3>
+                </div>
+              </div>
+              <ul>
+                <li data-en="1. Apply for subsidy" data-sw="1. Omba ruzuku">1. Apply for subsidy</li>
+                <li data-en="2. Check subsidy status" data-sw="2. Angalia hali ya ruzuku">2. Check subsidy status</li>
+                <li data-en="3. View available subsidies" data-sw="3. Tazama ruzuku zilizopo">3. View available subsidies</li>
+                <li data-en="4. Contact support" data-sw="4. Wasiliana na msaada">4. Contact support</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h4 data-en="Subsidy Tracking" data-sw="Ufuatiliaji wa Ruzuku">Subsidy Tracking</h4>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th data-en="Date" data-sw="Tarehe">Date</th>
+                      <th data-en="Type" data-sw="Aina">Type</th>
+                      <th data-en="Amount" data-sw="Kiasi">Amount</th>
+                      <th data-en="Status" data-sw="Hali">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="subsidyHistory">
+                    <tr>
+                      <td>2023-10-15</td>
+                      <td data-en="Fertilizer" data-sw="Mboji">Fertilizer</td>
+                      <td>KES 4,500</td>
+                      <td data-en="Completed" data-sw="Imekamilika">Completed</td>
+                    </tr>
+                    <tr>
+                      <td>2023-09-28</td>
+                      <td data-en="Seeds" data-sw="Mbegu">Seeds</td>
+                      <td>KES 3,200</td>
+                      <td data-en="Completed" data-sw="Imekamilika">Completed</td>
+                    </tr>
+                    <tr>
+                      <td>2023-08-10</td>
+                      <td data-en="Vaccination" data-sw="Chanjo">Vaccination</td>
+                      <td>KES 1,800</td>
+                      <td data-en="Completed" data-sw="Imekamilika">Completed</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+              <div class="mt-4">
+                <h5 data-en="Blockchain Transaction ID" data-sw="Kitambulisho cha Mwenendo wa Blockchain">Blockchain Transaction ID</h5>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" id="blockchainId" value="0x89a3b4c2d1e0f9a8b7c6d5e4f3a2b1c0d9e8f7" readonly>
+                  <button class="btn btn-outline-success" type="button" id="copyBlockchainId" data-en="Copy" data-sw="Nakili">Copy</button>
+                </div>
+                <small class="text-muted" data-en="All transactions are recorded on the blockchain for transparency" data-sw="Miamala yote imerekodiwa kwenye blockchain kwa uwazi">All transactions are recorded on the blockchain for transparency</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Training Portal Section -->
+  <section id="training" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4" data-en="Farmer Training Portal" data-sw="Jukwaa la Mafunzo ya Wakulima">Farmer Training Portal</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <i class="fas fa-syringe fa-3x text-success mb-3"></i>
+              <h5 data-en="Vaccination Guide" data-sw="Mwongozo wa Chanjo">Vaccination Guide</h5>
+              <p data-en="Learn proper vaccination techniques for your livestock" data-sw="Jifunze mbinu sahihi za chanjo kwa mifugo yako">Learn proper vaccination techniques for your livestock</p>
+              <a href="#" class="btn btn-outline-success" data-en="View Guide" data-sw="Tazama Mwongozo">View Guide</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <i class="fas fa-dna fa-3x text-success mb-3"></i>
+              <h5 data-en="AI Breeding" data-sw="Ufugaji Bandia">AI Breeding</h5>
+              <p data-en="Master artificial insemination for improved breeds" data-sw="Jifunze ufugaji bandia kwa mifugo bora">Master artificial insemination for improved breeds</p>
+              <a href="#" class="btn btn-outline-success" data-en="Learn More" data-sw="Jifunze Zaidi">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <i class="fas fa-map-marked-alt fa-3x text-success mb-3"></i>
+              <h5 data-en="Location-Based Tips" data-sw="Vidokezo vya Eneo">Location-Based Tips</h5>
+              <p data-en="Get farming advice specific to your region" data-sw="Pata ushauri wa kilimo maalum kwa eneo lako">Get farming advice specific to your region</p>
+              <button id="getLocationBtn" class="btn btn-outline-success" data-en="Get Tips" data-sw="Pata Vidokezo">Get Tips</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
   <!-- Contact Section -->
   <section id="contact" class="bg-light py-5">
     <div class="container">
@@ -374,7 +532,7 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title" data-en="Send Us a Message" data-sw="Tutumie Ujumbe">Send Us a Message</h5>
-              <form>
+              <form id="contactForm">
                 <div class="mb-3">
                   <label for="name" class="form-label" data-en="Name" data-sw="Jina">Name</label>
                   <input type="text" class="form-control" id="name" required data-en-placeholder="Your name" data-sw-placeholder="Jina lako">
@@ -424,8 +582,8 @@
           <ul class="list-unstyled">
             <li><a href="#prices" class="text-white" data-en="Market Prices" data-sw="Bei za Soko">Market Prices</a></li>
             <li><a href="#financial" class="text-white" data-en="Financial Services" data-sw="Huduma za Kifedha">Financial Services</a></li>
-            <li><a href="#" class="text-white" data-en="Mobile App" data-sw="Programu ya Simu">Mobile App</a></li>
-            <li><a href="#" class="text-white" data-en="USSD Service" data-sw="Huduma ya USSD">USSD Service</a></li>
+            <li><a href="#training" class="text-white" data-en="Training" data-sw="Mafunzo">Training</a></li>
+            <li><a href="#mpesa-integration" class="text-white" data-en="M-Pesa" data-sw="M-Pesa">M-Pesa</a></li>
           </ul>
         </div>
         <div class="col-md-4">
@@ -462,93 +620,6 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      // Language switching functionality
-      const languageToggleLinks = document.querySelectorAll("[data-lang-toggle]");
-      const currentLangDisplay = document.querySelector("#currentLang");
-      let currentLang = localStorage.getItem("mifugopay_lang") || "en";
-      // Function to update all translatable elements
-      function updateLanguage(lang) {
-        // Update elements with data-en/data-sw attributes
-        document.querySelectorAll("[data-en], [data-sw]").forEach(el => {
-          if (el.hasAttribute(`data-${lang}`)) {
-            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-              const placeholder = el.getAttribute(`data-${lang}-placeholder`) || el.getAttribute(`data-${lang}`);
-              if (placeholder) el.placeholder = placeholder;
-            } else if (el.tagName === 'OPTION' && el.selected) {
-              // Handle select options
-              const select = el.closest('select');
-              if (select) {
-                select.querySelector('option[selected]')?.removeAttribute('selected');
-                el.setAttribute('selected', 'selected');
-              }
-            } else {
-              el.textContent = el.getAttribute(`data-${lang}`);
-            }
-          }
-        });
-        // Update dropdown display
-        currentLangDisplay.textContent = lang === "en" ? "English" : "Swahili";
-        // Update page title
-        document.title = document.querySelector("title").getAttribute(`data-${lang}`) || document.title;
-        // Store language preference
-        localStorage.setItem("mifugopay_lang", lang);
-        currentLang = lang;
-      }
-      // Initialize language
-      updateLanguage(currentLang);
-      // Language toggle event listeners
-      languageToggleLinks.forEach(link => {
-        link.addEventListener("click", function(e) {
-          e.preventDefault();
-          const lang = this.getAttribute("data-lang-toggle");
-          if (lang !== currentLang) {
-            updateLanguage(lang);
-          }
-        });
-      });
-      // Form submission handling
-      const subsidyForm = document.getElementById("subsidyForm");
-      if (subsidyForm) {
-        subsidyForm.addEventListener("submit", function(e) {
-          e.preventDefault();
-          const message = currentLang === "en" ?
-            "Your subsidy application has been submitted successfully! We will contact you soon." :
-            "Ombi lako la ruzuku limewasilishwa kikamilifu! Tutawasiliana nawe hivi karibuni.";
-          alert(message);
-          this.reset();
-        });
-      }
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function(e) {
-          e.preventDefault();
-          const targetId = this.getAttribute("href");
-          const targetElement = document.querySelector(targetId);
-          if (targetElement) {
-            window.scrollTo({
-              top: targetElement.offsetTop - 70,
-              behavior: "smooth"
-            });
-          }
-        });
-      });
-      // Add animation class when elements come into view
-      const animateOnScroll = function() {
-        const elements = document.querySelectorAll(".card, .section-title, .table");
-        elements.forEach(element => {
-          const elementPosition = element.getBoundingClientRect().top;
-          const windowHeight = window.innerHeight;
-          if (elementPosition < windowHeight - 100) {
-            element.classList.add("fade-in");
-          }
-        });
-      };
-      window.addEventListener("scroll", animateOnScroll);
-      animateOnScroll(); // Run once on page load
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
-
-</html>
+</html>   
